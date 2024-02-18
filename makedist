@@ -300,6 +300,7 @@ fi
 
 FUSESUBDIR=false
 CVMFSFUSE3URL="$CVMFSURL/`echo $CVMFSRPMNAME|sed 's/cvmfs-/cvmfs-fuse3-/'`"
+CVMFSFUSE3URL="https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.11.2/cvmfs-fuse3-2.11.2-1.el7.x86_64.rpm"
 if $SING; then
     URLS="$URLS $CVMFSFUSE3URL"
     if [ "$EL" -lt 8 ]; then
