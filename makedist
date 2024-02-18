@@ -192,7 +192,8 @@ getcoprurl() {
 name=$REPONAME
 baseurl=https://download.copr.fedorainfracloud.org/results/dwd/$1/epel-$EL-$ARCH/
 !EOF!
-    yumdownloader -c $TMPF --disablerepo='*' --enablerepo=$REPONAME --archlist=$ARCH --urls $1|while read LINE; do
+    zypper --root ~/local ar https://download.copr.fedorainfracloud.org/results/dwd/$1/epel-$EL-$ARCH/ $REPONAME
+    zypper --root ~/local install $REPONAME|while read LINE; do
             if [[ "$LINE" == http* ]]; then
                 echo "$LINE"
             else
