@@ -344,10 +344,10 @@ else
     URLS="$URLS $URL"
 fi
 echo $URLS
-if [ "$EL" -eq 7 ]; then
+#if [ "$EL" -eq 7 ]; then
     # add fuse2fs only on EL7, it is standard elsewhere
     #URLS="$URLS $(getcoprurl fuse2fs)"
-fi
+#fi
 echo $URLS
 mkdir -p $DIST/etc
 cd $DIST
