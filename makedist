@@ -297,7 +297,7 @@ if $INCLUDEHELPER; then
     fi
     URLS="$URLS $URL"
 fi
-echo $URL
+echo $URLS
 FUSESUBDIR=false
 CVMFSFUSE3URL="$CVMFSURL/`echo $CVMFSRPMNAME|sed 's/cvmfs-/cvmfs-fuse3-/'`"
 CVMFSFUSE3URL="https://ecsft.cern.ch/dist/cvmfs/cvmfs-2.11.2/cvmfs-fuse3-2.11.2-1.el7.x86_64.rpm"
@@ -343,12 +343,12 @@ else
     fi
     URLS="$URLS $URL"
 fi
-echo $URL
+echo $URLS
 if [ "$EL" -eq 7 ]; then
     # add fuse2fs only on EL7, it is standard elsewhere
     URLS="$URLS $(getcoprurl fuse2fs)"
 fi
-echo $URL
+echo $URLS
 mkdir -p $DIST/etc
 cd $DIST
 
